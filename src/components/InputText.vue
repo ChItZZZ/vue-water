@@ -1,7 +1,9 @@
 <template>
     <div class="name" style="position: relative">
+        <i class="tag glyphicon" :class="tag"></i>
         <input type="text" :placeholder="placeholder">
         <button class="code" v-if="dataButton">{{dataButton}}</button>
+        <i class="dropdown glyphicon glyphicon-menu-down" v-if="dropDown"></i>
     </div>
 </template>
 <script>
@@ -9,7 +11,7 @@
         data(){
             return {}
         },
-        props: ['placeholder', 'data-button'],
+        props: ['placeholder', 'data-button', 'tag','drop-down'],
     }
 
 </script>
@@ -19,12 +21,15 @@
         margin: 20px auto;
         height: 30px;
     }
-    i{
+
+    i {
         display: inline-block;
     }
+
     input {
+        text-indent: 2em;
         width: 100%;
-        display:inline-block;
+        display: inline-block;
         height: 100%;
         border-bottom: 2px solid black;
         border-left: 0;
@@ -45,5 +50,15 @@
         font-size: 12px;
         width: 24%;
         cursor: pointer;
+    }
+    .tag{
+        position: absolute;
+        top: 4px;
+    }
+    .dropdown{
+        position: absolute;
+        right: 1.5em;
+        font-weight: bold;
+        bottom: 5px;
     }
 </style>
