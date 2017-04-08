@@ -3,15 +3,26 @@
         <i class="tag glyphicon" :class="tag"></i>
         <input type="text" :placeholder="placeholder">
         <button class="code" v-if="dataButton">{{dataButton}}</button>
-        <i class="dropdown glyphicon glyphicon-menu-down" v-if="dropDown"></i>
+        <i class="dropdown glyphicon glyphicon-menu-down" v-if="dropDown" @click="down" @blur="hideSelect"></i>
+        <div id="select" v-if="dropDown" v-show="isShow">同济</div>
     </div>
 </template>
 <script>
     export default {
         data(){
-            return {}
+            return {
+                isShow:false
+            }
         },
         props: ['placeholder', 'data-button', 'tag','drop-down'],
+        methods:{
+            down:function () {
+                this.isShow = !this.isShow
+            },
+            hideSelect:function () {
+                this.isShow = false;
+            }
+        }
     }
 
 </script>
@@ -54,6 +65,10 @@
     .tag{
         position: absolute;
         top: 4px;
+    }
+    #select{
+        width: 100%;
+        border: 1px solid darkgrey;
     }
     .dropdown{
         position: absolute;
