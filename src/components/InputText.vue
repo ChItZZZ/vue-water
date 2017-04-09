@@ -49,7 +49,7 @@
     }
 
     .code {
-        background-color: rgb(30, 180, 255);
+        background-color: rgb(74,171,75);
         border: 0;
         border-radius: 2px;
         color: white;
