@@ -150,10 +150,8 @@
         color: #2c3e50;
         width: 100%;
         position: relative;
-        margin-top: 30px;
     }
     option {
-        //position:absolute;
        width: 50%;
        display:block;
     }
