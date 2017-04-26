@@ -31,8 +31,12 @@
         },
         created:function(){
             var info = global.Info
-            this.apartment = info.apart
-            this.location = info.location
+            if(info === undefined){
+                //this.$router.push({path:'/'})
+            }else{
+                this.apartment = info.apart
+                this.location = info.location
+            }
         },
         methods:{
             orderWater:function(){
@@ -58,7 +62,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     #home-container{
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -66,12 +70,15 @@
         text-align: center;
         color: #2c3e50;
         width: 100%;
+        padding: 20px 0;
+        margin:0 auto;
+        min-height: 100vh;
         position: relative;
     }
     #img{
         width: 100px;
         height: 100px;
-        margin: 4rem auto;
+        margin:0 auto;
         text-align: center;
     }
     img{
@@ -93,10 +100,11 @@
         margin-top: 2.2rem;
     }
     .home-to{
-        display: inline-block;
-        margin-top: 1rem;
         position:absolute;
-        bottom:20px;
+        bottom: 20vh;
+        left: 50%;
+        display: inline-block;
+        transform: translateX(-50%);
     }
     .home-location{
         display: flex;

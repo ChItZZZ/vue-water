@@ -62,17 +62,17 @@
                 return re.test(str);
             },
             isPhone:function( phone ){
-                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
-                if(myreg.test(phone) && phone.length==11) 
-                { 
-                    return true; 
+                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                if(myreg.test(phone) && phone.length==11)
+                {
+                    return true;
                 }
                 return false;
             },
             validateBeforeSubmit:function(){
                 var name,apartment,location,phone,codes,station;
                 name = this.$refs.name.inputVal;
-                apartment = this.select_apart;                
+                apartment = this.select_apart;
                 location = this.$refs.location.inputVal;
                 phone = this.$refs.phone.inputVal;
                 station = this.select_station;
@@ -108,7 +108,7 @@
                 if(validation){
                     var name,apartment,location,phone,codes,station,obj = {};
                     name = this.$refs.name.inputVal;
-                    apartment = this.select_apart;                
+                    apartment = this.select_apart;
                     location = this.$refs.location.inputVal;
                     phone = this.$refs.phone.inputVal;
                     station = this.select_station;
@@ -137,7 +137,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     body,html{
         margin: auto;
         width: 100%;
@@ -158,7 +158,9 @@
     #img{
         width: 100px;
         height: 100px;
-        margin: 35px auto;
+        margin: 0px auto;
+        padding: 10px 0;
+        box-sizing: border-box;
         text-align: center;
     }
     img{
