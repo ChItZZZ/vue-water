@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app-container">
       <div v-show="createSuccess">
         <div id="img">
             <img src="./assets/logo.png">
@@ -142,7 +142,7 @@
         margin: auto;
         width: 100%;
     }
-    #app {
+    #app-container {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
